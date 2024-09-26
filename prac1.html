@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="Calc.js"></script>
+</head>
+<body>
+    <!-- Вкладки з двома калькуляторами -->
+    <div>
+        <button onclick="openTab('fuelCalculator')">Fuel Calculator</button>
+        <button onclick="openTab('mazutCalculator')">Mazut Calculator</button>
+    </div>
+
+    <!-- Калькулятор для палива -->
+    <div id="fuelCalculator" style="display:block;">
+        <h2>Fuel Calculator</h2>
+        <div class="input-container">
+            <div>
+                <label for="fuelHydrogen">Hydrogen (%):</label>
+                <input type="number" id="fuelHydrogen" required>
+
+                <label for="fuelCarbon">Carbon (%):</label>
+                <input type="number" id="fuelCarbon" required>
+
+                <label for="fuelSulfur">Sulfur (%):</label>
+                <input type="number" id="fuelSulfur" required>
+
+                <label for="fuelNitrogen">Nitrogen (%):</label>
+                <input type="number" id="fuelNitrogen" required>
+            </div>
+
+            <div>
+                <label for="fuelOxygen">Oxygen (%):</label>
+                <input type="number" id="fuelOxygen" required>
+
+                <label for="fuelHumidity">Humidity (%):</label>
+                <input type="number" id="fuelHumidity" required>
+
+                <label for="fuelAsh">Ash (%):</label>
+                <input type="number" id="fuelAsh" required>
+            </div>
+        </div>
+
+        <button onclick="fuelCalculator.calculateFuel()">Calculate</button>
+        <div id="fuelResults"></div>
+    </div>
+
+    <!-- Калькулятор для мазуту -->
+    <div id="mazutCalculator" style="display:none;">
+        <h2>Mazut Calculator</h2>
+        <div class="input-container">
+            <div>
+                <label for="mazutCarbon">Carbon (%):</label>
+                <input type="number" id="mazutCarbon" required>
+
+                <label for="mazutHydrogen">Hydrogen (%):</label>
+                <input type="number" id="mazutHydrogen" required>
+
+                <label for="mazutOxygen">Oxygen (%):</label>
+                <input type="number" id="mazutOxygen" required>
+            </div>
+
+            <div>
+                <label for="mazutSulfur">Sulfur (%):</label>
+                <input type="number" id="mazutSulfur" required>
+
+                <label for="mazutQDaf">Lower calorific value of fuel oil combustible mass (MJ/kg):</label>
+                <input type="number" id="mazutQDaf" required>
+
+                <label for="mazutHumidity">Humidity (%):</label>
+                <input type="number" id="mazutHumidity" required>
+            </div>
+
+            <div>
+                <label for="mazutAsh">Ash (%):</label>
+                <input type="number" id="mazutAsh" required>
+
+                <label for="mazutVanadium">Vanadium (mg/kg):</label>
+                <input type="number" id="mazutVanadium" required>
+            </div>
+        </div>
+
+        <button onclick="mazutCalculator.calculateMazut()">Calculate</button>
+        <div id="mazutResults"></div>
+    </div>
+</body>
+</html>
